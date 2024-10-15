@@ -2,7 +2,7 @@ let adminbtn = document.getElementById('adminbtn')
 let adminpas = document.getElementById('adminpas')
 let admindiv = document.getElementById('admindiv')
 
-const backendlink = 'http://localhost:3000/'
+const backendlink = 'https://codingblogsbackend.vercel.app/'
 const route = 'frontend/admin/'
 const link = backendlink+route
 
