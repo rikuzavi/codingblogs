@@ -5,7 +5,7 @@ let displaymes = document.getElementById('displaymes')
 let maindiv = document.getElementById('maindiv')
 let p = document.getElementById('p')
 
-const backendlink = 'http://localhost:3000/'
+const backendlink = 'https://codingblogsbackend.vercel.app/'
 const route = 'frontend/changeportal/'
 const link = backendlink+route
 
