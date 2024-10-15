@@ -24,7 +24,7 @@ let updatedetailmess = document.getElementById('updatedetailmess')
 let confirmdelacc =document.getElementById('confirmdelacc')
 let delaccmess = document.getElementById('delaccmes')
 
-const backendlink ='http://localhost:3000/'
+const backendlink ='https://codingblogsbackend.vercel.app/'
 const route = 'frontend/user/'
 const link = backendlink+route
 
