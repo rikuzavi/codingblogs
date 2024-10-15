@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication</title>
+    <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+    <div id="outer">
+        <h1 id="h1">SIGN IN</h1>
+        
+        <div id="cover">
+        </div>
+        <div id="form"> 
+            <div id="signin">
+                <form id="form_in">
+                    <input type="email" placeholder="Email Address" required id="logemail"><br>
+                    <input type="password" placeholder="Password" required class="password" id="logpas"><span>🔴</span><br>
+                    <button type="submit" id="login">Login</button>
+                    <button type="reset">Reset</button>
+                </form>
+                <br>
+                <h3>Don't have a account ?</h3>
+                <button id="butup">sign up</button>
+                <button id="forgetpass">forget password</button><br>
+                <a href="../main/index.html"><button id="goback">main page</button></a>
+                <br>
+                <br>
+                <h4 id="logmes"></h4>
+            </div>
+    
+            <div id="signup">
+                <form id="form_up">
+                    <input type="text" placeholder="User name" required id="regname"><br>
+                    <input type="email" placeholder="Email Address" required id="regemail"><br>
+                    <input type="password" placeholder="Password" required class="password" id="regpas"><span>🔴</span><br>
+                    <button type="submit" id="register">Register</button>
+                    <button type="reset">reset</button>
+                </form>
+                <br>
+                <h3>Have a account ?</h3>
+                <button id="butin">sign in</button>
+                <a href="../main/index.html"><button id="goback">main page</button></a>
+                <br>
+                <br>
+                <h4 id="regmes"></h4>
+            </div>
+        </div>
+        
+    </div> 
+    
+    <script src="auth.js"></script>
+    <script src="authapi.js"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USER</title>
+    <link rel="stylesheet" href="user.css">
+</head>
+<body id="body">
+    <div id="updateaccdiv">
+        <h3 id="updatedetailmess"></h3>
+        <input type="text" id="updatename" placeholder="N A M E"><br>
+        <input type="text" id="updatepass" placeholder="P A S S W O R D"><br>
+        <button id="updatedetail">CHANGE</button>
+        <span id="updateaccclose">X</span>
+    </div>
+
+    <div id="delacc">
+        <div>
+            <h3>Are You Sure wanted to delete the account
+            <br>All post will be lost
+            </h3>
+        </div>
+        <h4 id="delaccmes"></h4>
+        <div>
+            <button id="confirmdelacc">confirm</button>
+            <button id="delclosebtn">X</button>
+        </div>
+        
+    </div>
+
+    <div id="userdetail">
+        <div>
+            <img src="../images/user.png" alt="" id="userimg">
+            <h1 id="username">USERNAME</h1>
+        </div>
+        <div id="navclick">=</div>
+        <div id="details">
+            <button id="updateaccbtn" class="mainbut">Update account</button>
+            <button id="delaccbtn" class="mainbut">Delete account</button><br><br>
+            <button id="logoutbut" class="mainbut">LOGOUT</button>
+            <button id="addpost" class="mainbut">ADD POST</button>
+            <a href="/frontend/main/index.html" class="mainbut">🢀 HOME</a>
+        </div>
+        
+    </div>
+    <br>
+    <div id="ruler"></div>
+    <br>
+    <pre>
+
+
+
+
+
+
+    </pre>
+
+    <div id="modal">
+        <h3 id="pushpostmess"></h3>
+        <span id="closemodal">X</span>
+        <textarea id="title" placeholder="S U B J E C T"></textarea>
+        <textarea id="textarea" placeholder="P O S T"></textarea>
+        <button id="pushpost">POST</button>
+    </div>
+
+    <div id="delmodal">
+        <div>
+            <h3 id="deletepostmess"></h3>
+            <span id="closedelmodal">X</span><br><br>
+            <h1>ARE YOU SURE YOU WANT TO DELETE POST</h1>
+            <input type="text" id="postidinp" hidden>
+            <button id="deletepostbut">DELETE</button>
+        </div>
+    </div>
+
+    <div id="updatemodal">
+        <h3 id="updatepostmess"></h3>
+        <span id="closeupdatemodal">X</span><br>
+        <textarea id="updatetitle" placeholder="S U B J E C T"></textarea>
+        <textarea id="updatetextarea" placeholder="P O S T"></textarea><br>
+        <input type="text" id="updateidinp" hidden>
+        <button id="updatepost">UPDATE</button>
+    </div>
+
+    <script src="userapi.js"></script>
+    <script src="user.js"></script>
+</body>
+</html>

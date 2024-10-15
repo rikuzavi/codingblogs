@@ -1,0 +1,426 @@
+*{
+    margin : 0px;
+    font-family: Arial;
+}
+
+::-webkit-scrollbar{
+    width: 10px;
+    height: 80%;
+}
+
+::-webkit-scrollbar-track{
+    background-color: transparent;
+    backdrop-filter: brightness(10%);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: lightgreen;
+}
+
+
+@media(min-width : 1100px){
+    body{
+        background-image: url('../images/main.png');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100vh;
+        
+    }
+    #navbut{
+        display: none;
+    }
+
+    #heading{
+        font-size: 150px;
+        text-align: center;
+        background: url('../images/h1_bg.jpg') 0 0;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: bold;
+        background-size: contain;
+        animation: heading_bg 40s linear infinite;
+    }
+    @keyframes heading_bg {
+        0%{
+            background-position: 0 0;
+        }
+        100%{
+            background-position: 100% 0;
+        }
+    }
+
+    #nav{
+        position :sticky;
+        top : 0px;
+        z-index: 1;
+    }
+
+    #navbar{
+        display : flex;
+        color : white;
+        justify-content: space-between;
+        width: 80%;
+        background-color: transparent;
+        border-radius: 50px;
+        padding: 20px;
+        margin: auto;
+        backdrop-filter: brightness(30%) blur(2px);
+        transition: all 0.5s;
+    }
+    #but{
+        display: flex;
+        margin-right: 60px;
+    }
+    .nvbut{
+        color: black;
+        text-decoration: none;
+        font-size: 20px;
+        margin-right: 30px;
+        font-weight: bold;
+        background-color: lightgreen;
+        padding: 10px;
+        transition: all 0.2s;
+        border: 3px solid lightgreen;
+        border-radius: 30px;
+    }
+
+    .nvbut:hover{
+        transform: scale(1.2);
+        background-color: transparent;
+        color: white;
+        border: 3px solid palevioletred;
+    }
+    #logo{
+        color: white;
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: bold;
+        margin-left: 60px;
+        margin-top: 10px;
+        transition: all 0.5s;
+    }
+    #logo:hover{
+        color : palevioletred;
+        cursor: pointer;
+        transform: scale(1.2);
+    }
+
+    #content{
+        color: white;
+        display: grid;
+        grid-template-columns: auto;
+        width: 80%;
+        margin: auto;
+        margin-top: 100px;
+    }
+
+    .inner{
+        border: 5px solid lightgreen;
+        margin: 10px 10px 50px 10px;
+        height: 500px;
+        position: relative;
+        overflow: hidden;
+        border-radius: 30px;
+        transition: all 0.3s;
+    }
+    .contentheading{
+        backdrop-filter: blur(10px);
+        text-align: center;
+        border-bottom: 3px solid white;
+    }
+    .contentpost{
+        font-size: large;
+        font-family: consolas;
+        font-weight: bold;
+        overflow: auto;
+        height: 410px;
+        padding :10px 0px 0px 10px;
+        color: violet;
+        backdrop-filter: brightness(30%);
+    }
+    .contentack{
+        /* background-color: violet; */
+        text-align: end;
+        padding-right: 20px;
+        font-family:'Gabriola';
+        letter-spacing: 5px;
+        font-weight: lighter;
+        backdrop-filter: blur(10px);
+        position: relative;
+    }
+    #next{
+        height: 50px;
+        width: 100px;
+        background-color: palevioletred;
+        font-size: xx-large;
+        clip-path: polygon(0% 50%,50% 100%, 100% 50%, 100% 0%, 0% 0%);
+        transition: all 0.3s;
+    }
+    #next:hover{
+        clip-path: polygon(0% 20%,50% 100%, 100% 20%, 100% 0%, 0% 0%);
+        background-color: lightgreen;
+    }
+    #nextbtndiv{
+        width: fit-content;
+        margin: auto;
+        margin-bottom: 10px;
+    }
+    #searchdiv{
+        width: fit-content;
+        margin: auto;
+        width: 80%;
+        z-index: 1;
+    }
+    #searchinp{
+        width: 30%;
+        font-size: large;
+        padding: 10px;
+        border-radius: 20px;
+        color: palevioletred;
+        font-weight: bold;
+        transition: all 0.3s;
+    }
+    #searchbut{
+        padding: 13px;
+        border-radius: 20px;
+        background-color: lightgreen;
+        font-weight: bold;
+        font-size: large;
+    }
+    #searchinp:focus{
+        background-color: transparent;
+        outline: 2px solid lightgreen;
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media(max-width : 1099px){
+    body{
+        background-color: black;
+        
+    }
+
+    #heading{
+        font-size: 250%;
+        text-align: center;
+        background: url('../images/h1_bg.jpg') 0 0;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: bold;
+        background-size: contain;
+        animation: heading_bg 40s linear infinite;
+    }
+    @keyframes heading_bg {
+        0%{
+            background-position: 0 0;
+        }
+        100%{
+            background-position: 100% 0;
+        }
+    }
+    #navbut{
+        display: block;
+        margin-right: 20px;
+        font-size: x-large;
+    }
+    #nav{
+        position :sticky;
+        top : 0px;
+        z-index: 1;
+    }
+
+    #navbar{
+        display : flex;
+        color : white;
+        justify-content: space-between;
+        width: 100%;
+        background-color: transparent;
+        backdrop-filter: brightness(30%) blur(2px);
+        height: 50px;
+        align-items: center;
+    }
+    #but{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: all 0.5s;
+        position: absolute;
+        top: 50px;
+        right: 0px;
+        z-index: 2;
+        background-color: black;
+        overflow: hidden;
+        height: 100vh;
+        width: 0%;
+    }
+    .nvbut{
+        color: black;
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: bold;
+        background-color: lightgreen;
+        padding: 40px 80px 40px 80px;
+        border-radius: 30px;
+        transition: all 0.5s;
+        margin: 20px 0px 20px 0px;
+        margin-left: 110%;
+        text-align: center;
+        border: 5px solid violet;
+    }
+
+    #logo{
+        color: white;
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: bold;
+        margin-right: 10px;
+        margin-left: 5px;
+        animation: changelogo 10s infinite;
+    }
+
+    @keyframes changelogo{
+        0%{
+            color: white;
+        }
+        25%{
+            color: lightgreen;
+        }
+        50%{
+            color: palevioletred;
+        }
+        75%{
+            color: tomato;
+        }
+        100%{
+            color: white;
+        }
+    }
+    
+
+    #content{
+        color: white;
+        display: grid;
+        grid-template-columns: auto;
+        width: 80%;
+        margin: auto;
+        margin-top: 100px;
+    }
+
+    .inner{
+        border: 5px solid lightgreen;
+        margin: 10px 10px 50px 10px;
+        height: 500px;
+        position: relative;
+        overflow: hidden;
+        border-radius: 30px;
+    }
+    .contentheading{
+        backdrop-filter: blur(10px);
+        text-align: center;
+        border-bottom: 3px solid white;
+    }
+    .contentpost{
+        font-size: large;
+        font-family: consolas;
+        font-weight: bold;
+        overflow: auto;
+        height: 410px;
+        padding :10px 0px 0px 10px;
+        color: violet;
+        backdrop-filter: brightness(30%);
+    }
+    .contentack{
+        text-align: end;
+        padding-right: 20px;
+        font-family:'Gabriola';
+        letter-spacing: 5px;
+        font-weight: lighter;
+        backdrop-filter: blur(10px);
+        position: absolute;
+        bottom: 0;
+        width: 90%;
+    }
+    #next{
+        height: 50px;
+        width: 100px;
+        background-color: palevioletred;
+        font-size: xx-large;
+        clip-path: polygon(0% 50%,50% 100%, 100% 50%, 100% 0%, 0% 0%);
+        transition: all 0.3s;
+    }
+    #next:hover{
+        clip-path: polygon(0% 20%,50% 100%, 100% 20%, 100% 0%, 0% 0%);
+        background-color: lightgreen;
+    }
+    #nextbtndiv{
+        width: fit-content;
+        margin: auto;
+        margin-bottom: 10px;
+    }
+    #searchdiv{
+        width: fit-content;
+        margin: auto;
+        width: 100%;
+        z-index: 1;
+    }
+    #searchinp{
+        width: 30%;
+        font-size: large;
+        padding: 10px;
+        border-radius: 20px;
+        color: palevioletred;
+        font-weight: bold;
+    }
+    #searchbut{
+        padding: 13px;
+        border-radius: 20px;
+        background-color: lightgreen;
+        font-weight: bold;
+        font-size: large;
+    }
+    #searchinp:focus{
+        background-color: transparent;
+        outline: 2px solid lightgreen;
+    }
+
+}
