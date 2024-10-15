@@ -9,7 +9,7 @@ let content = document.getElementById('content')
 let searchinp = document.getElementById('searchinp')
 let searchbut = document.getElementById('searchbut') 
 
-const backendlink = 'http://localhost:3000/'
+const backendlink = 'https://codingblogsbackend.vercel.app/'
 const route = 'frontend/main/'
 const link = backendlink+route
 
