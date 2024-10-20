@@ -4,6 +4,7 @@ let but = document.getElementById('but')
 let nvbut = document.getElementsByClassName('nvbut')
 let nav = document.getElementById('nav')
 let navbar = document.getElementById('navbar')
+let loaderdiv = document.getElementById('loaderdiv')
 
 navbut.addEventListener('click',()=>{
     for(let i of nvbut){
