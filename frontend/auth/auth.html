@@ -16,7 +16,7 @@
             <div id="signin">
                 <form id="form_in">
                     <input type="email" placeholder="Email Address" required id="logemail"><br>
-                    <input type="password" placeholder="Password" required class="password" id="logpas"><span>🔴</span><br>
+                    <input type="password" placeholder="Password" required class="password" id="logpas"><span>⚇</span><br>
                     <button type="submit" id="login">Login</button>
                     <button type="reset">Reset</button>
                 </form>
@@ -34,7 +34,7 @@
                 <form id="form_up">
                     <input type="text" placeholder="User name" required id="regname"><br>
                     <input type="email" placeholder="Email Address" required id="regemail"><br>
-                    <input type="password" placeholder="Password" required class="password" id="regpas"><span>🔴</span><br>
+                    <input type="password" placeholder="Password" required class="password" id="regpas"><span>⚇</span><br>
                     <button type="submit" id="register">Register</button>
                     <button type="reset">reset</button>
                 </form>
@@ -49,7 +49,9 @@
         </div>
         
     </div> 
-    
+    <div id="loaderdiv">
+        <object id="loader" data="../preloader/loader.html"></object>
+    </div>
     <script src="auth.js"></script>
     <script src="authapi.js"></script>
 </body>
