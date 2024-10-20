@@ -39,6 +39,47 @@ async function authentication(){
     const response = await res.json()
     if(response.user_logged === false){
         document.write(`<body style="background-color : black;"><center><img src='../images/trollface.gif'></center></body>`)
+    }else{
+        async function show_data(){
+            const res = await fetch(link,
+                {
+                    method : "GET",
+                    headers : {"content-type" : "application/json"},
+                    credentials:'include'
+            });
+            let outer = document.createElement('div')
+            outer.id = "outer"
+            const response = await res.json()
+            username.innerText = response['username']
+            if( response.useraccess == 'false'){
+                outer.innerHTML=`<h1 style="color:white;">YOU ARE NOT AUTHORISED TO POST</h1>`
+            }else{
+                for(let i of response.userData){
+                    outer.appendChild(post_holder(i.title,i.post,i._id)[0])
+                    outer.appendChild(post_holder(i.title,i.post,i._id)[1])
+                }
+            }
+            body.before(outer)
+        }
+        show_data().then(()=>{
+            let delete_post_but = document.getElementsByClassName('delbut')
+            let update_post_but = document.getElementsByClassName('updatebut')
+            for(let i of delete_post_but){
+                i.addEventListener("click", ()=>{
+                    delmodal.style.visibility = 'visible'
+                    postidinp.value = i.nextSibling.value
+                })
+            }
+            for(let i of update_post_but){
+                i.addEventListener("click", ()=>{
+                    updatemodal.style.visibility = 'visible'
+                    updateidinp.value = i.previousSibling.value
+                    let data = i.parentElement.previousSibling.childNodes
+                    updatetextarea.value = data[1].innerText
+                    updatetitle.value = data[0].innerText
+                })
+            }
+        })
     }
 }
 authentication()
@@ -118,47 +159,7 @@ function post_holder(title,desc,id,like){
     return [inner1,inner2]
 }
 
-async function show_data(){
-    const res = await fetch(link,
-        {
-            method : "GET",
-            headers : {"content-type" : "application/json"},
-            credentials:'include'
-    });
-    let outer = document.createElement('div')
-    outer.id = "outer"
-    const response = await res.json()
-    username.innerText = response['username']
-    if( response.useraccess == 'false'){
-        outer.innerHTML=`<h1 style="color:white;">YOU ARE NOT AUTHORISED TO POST</h1>`
-    }else{
-        for(let i of response.userData){
-            outer.appendChild(post_holder(i.title,i.post,i._id)[0])
-            outer.appendChild(post_holder(i.title,i.post,i._id)[1])
-        }
-    }
-    body.before(outer)
-}
 
-show_data().then(()=>{
-    let delete_post_but = document.getElementsByClassName('delbut')
-    let update_post_but = document.getElementsByClassName('updatebut')
-    for(let i of delete_post_but){
-        i.addEventListener("click", ()=>{
-            delmodal.style.visibility = 'visible'
-            postidinp.value = i.nextSibling.value
-        })
-    }
-    for(let i of update_post_but){
-        i.addEventListener("click", ()=>{
-            updatemodal.style.visibility = 'visible'
-            updateidinp.value = i.previousSibling.value
-            let data = i.parentElement.previousSibling.childNodes
-            updatetextarea.value = data[1].innerText
-            updatetitle.value = data[0].innerText
-        })
-    }
-})
 
 deletepostbut.addEventListener("click",async()=>{
     let delpost_obj={
