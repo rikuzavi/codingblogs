@@ -40,24 +40,24 @@ if(window.innerWidth > 1099){
     })
     
     span1.addEventListener("click",()=>{
-        if(span1.innerText=='🔴'){
-            span1.innerText="⚪"
+        if(span1.innerText=='⚇'){
+            span1.innerText="⚉"
             pass1.type = "text"
             pass1.style.width = "85%"
         }else{
-            span1.innerText="🔴"
+            span1.innerText="⚇"
             pass1.type = "password"
         }
         
     })
     
     span2.addEventListener("click",()=>{
-        if(span2.innerText=='🔴'){
-            span2.innerText="⚪"
+        if(span2.innerText=='⚇'){
+            span2.innerText="⚉"
             pass2.type = "text"
             pass2.style.width = "85%"
         }else{
-            span2.innerText="🔴"
+            span2.innerText="⚇"
             pass2.type = "password"
         }
     })
@@ -79,22 +79,22 @@ if(window.innerWidth > 1099){
     })
     
     span1.addEventListener("click",()=>{
-        if(span1.innerText=='🔴'){
-            span1.innerText="⚪"
+        if(span1.innerText=='⚇'){
+            span1.innerText="⚉"
             pass1.type = "text"
         }else{
-            span1.innerText="🔴"
+            span1.innerText="⚇"
             pass1.type = "password"
         }
         
     })
     
     span2.addEventListener("click",()=>{
-        if(span2.innerText=='🔴'){
-            span2.innerText="⚪"
+        if(span2.innerText=='⚇'){
+            span2.innerText="⚉"
             pass2.type = "text"
         }else{
-            span2.innerText="🔴"
+            span2.innerText="⚇"
             pass2.type = "password"
         }
     })
