@@ -44,7 +44,6 @@ register_but.addEventListener("click",async(e)=>{
         }else{
             reg_mes.style.color = 'lightgreen'
         }
-        console.log(response.data)
     }
     
 })
@@ -80,7 +79,6 @@ login_but.addEventListener("click",async(e)=>{
         }else{
             log_mes.style.color = 'red'
         }
-        console.log(response)
     }  
 })
 
