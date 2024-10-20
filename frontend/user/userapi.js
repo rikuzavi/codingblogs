@@ -29,7 +29,7 @@ const route = 'frontend/user/'
 const link = backendlink+route
 
 async function authentication(){
-    const res = await fetch(backendlink,
+    const res = await fetch(link,
         {
             method : "GET",
             headers : {"content-type" : "application/json"},
