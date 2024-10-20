@@ -9,6 +9,7 @@ let login_but =document.getElementById("login")
 let log_mes= document.getElementById("logmes")
 let reg_mes = document.getElementById("regmes")
 let forget_but = document.getElementById("forgetpass")
+let loaderdiv = document.getElementById('loaderdiv')
 const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
 const backendlink = 'https://codingblogsbackend.vercel.app/'
@@ -18,6 +19,7 @@ const link = backendlink+route
 
 register_but.addEventListener("click",async(e)=>{
     e.preventDefault()
+    loaderdiv.style.display = 'flex'
     let reg_obj = {
         'auth' : 'register',
         'name' : regname.value,
@@ -25,24 +27,30 @@ register_but.addEventListener("click",async(e)=>{
         'pas' : regpas.value
     }
     if(reg_obj.name === '' || reg_obj.email === '' || reg_obj.pas === '' || /\s/.test(reg_obj.email)===true){
+        loaderdiv.style.display = 'none'
         reg_mes.innerText = "Empty Fields !"
         reg_mes.style.color = "red"
     }else if(!emailPattern.test(reg_obj.email)){
+        loaderdiv.style.display = 'none'
         reg_mes.innerText = "Email validation error !"
         reg_mes.style.color = "red"
     }else{
-        const res = await fetch(link,
+        try{
+            const res = await fetch(link,
             {
                 method : "POST",
                 headers : {"content-type" : "application/json"},
                 body : JSON.stringify(reg_obj)
-        });
-        const response = await res.json()
-        reg_mes.innerText = response.mes
-        if(response.mes === 'email already registered'){
-            reg_mes.style.color = 'yellow'
-        }else{
-            reg_mes.style.color = 'lightgreen'
+            });
+            const response = await res.json()
+            reg_mes.innerText = response.mes
+        }finally{
+            loaderdiv.style.display = 'none'
+            if(reg_mes.innerText === 'email already registered'){
+                reg_mes.style.color = 'yellow'
+            }else{
+                reg_mes.style.color = 'lightgreen'
+            }
         }
     }
     
@@ -50,34 +58,41 @@ register_but.addEventListener("click",async(e)=>{
 
 login_but.addEventListener("click",async(e)=>{
     e.preventDefault()
+    loaderdiv.style.display = 'flex'
     let log_obj = {
         'auth' : 'login',
         'email' : logemail.value,
         'pas' : logpas.value
     }
     if(log_obj.email === '' || log_obj.pas === '' || /\s/.test(log_obj.email)===true){
+        loaderdiv.style.display = 'none'
         log_mes.innerText = 'Empty fields'
         log_mes.style.color = "red"
         logemail.style.outline = " 2px solid red"
         logpas.style.outline = " 2px solid red"
     }else if(!emailPattern.test(log_obj.email)){
+        loaderdiv.style.display = 'none'
         log_mes.innerText = "Email validation error"
         log_mes.style.color = "red"
     }else{
-        const res = await fetch(link,
+        try{
+           const res = await fetch(link,
             {
                 method : "POST",
                 headers : {"content-type" : "application/json"},
                 credentials: 'include',
                 body : JSON.stringify(log_obj)
-        });
-        const response = await res.json()
-        log_mes.innerText = response.mes
-        if(response.mes === 'success login'){
-            log_mes.style.color = 'lightgreen'
-            location.href = '../main/index.html'
-        }else{
-            log_mes.style.color = 'red'
+            });
+            const response = await res.json()
+            log_mes.innerText = response.mes 
+        }finally{
+            loaderdiv.style.display = 'none'
+            if(log_mes.innerText === 'success login'){
+                log_mes.style.color = 'lightgreen'
+                location.href = '../main/index.html'
+            }else{
+                log_mes.style.color = 'red'
+            }
         }
     }  
 })
@@ -95,6 +110,7 @@ forget_but.addEventListener("click",async(e)=>{
         log_mes.innerText = "Email validation error"
         log_mes.style.color = "red"
     }else{
+        loaderdiv.style.display = 'none'
         window.open('../changeportal/change.html','_blank')
     }  
 })
