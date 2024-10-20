@@ -391,6 +391,24 @@
         background-color: red;
         color: white;
     }
+    object{
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+        position: relative;
+        align-self: center;
+    }
+    #loaderdiv{
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        top: 0px;
+        display: flex;
+        justify-content: center;
+        background-color: transparent;
+        backdrop-filter: blur(10px);
+        z-index: 5;
+    }
 }
 
 
@@ -758,6 +776,23 @@
     #updateaccdiv > span:hover{
         background-color: red;
         color: white;
-        
+    }
+    object{
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+        position: relative;
+        align-self: center;
+    }
+    #loaderdiv{
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        top: 0px;
+        display: flex;
+        justify-content: center;
+        background-color: transparent;
+        backdrop-filter: blur(10px);
+        z-index: 5;
     }
 }
