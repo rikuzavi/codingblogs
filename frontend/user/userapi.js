@@ -88,17 +88,21 @@ logout_but.addEventListener("click", async()=>{
     let logout_obj ={
         'task' : 'logout'
     }
-    const res = await fetch(link,
+    let response
+    try{
+        const res = await fetch(link,
         {
             method : "POST",
             headers : {"content-type" : "application/json"},
             credentials:'include',
             body : JSON.stringify(logout_obj)
-    });
-    let response =await res.json()
-
-    if(response.mes = 'success logout'){
-        location.href = '../main/index.html'
+        });
+        response =await res.json()
+    }finally{
+        loaderdiv.style.display = 'flex'
+        if(response.mes = 'success logout'){
+            location.href = '../main/index.html'
+        }
     }
 })
 
@@ -108,24 +112,30 @@ addpost_but.addEventListener("click", async()=>{
         'title' : title.value,
         'post' : post.value
     }
+    loaderdiv.style.display = 'flex'
     if(addpost_obj.title === '' || addpost_obj.post === ''){
         pushpostmess.innerText = "Empty Field !"
         pushpostmess.style.color = "red"
     }else{
-        const res = await fetch(link,
+        let response
+        try{
+            const res = await fetch(link,
             {
                 method : "POST",
                 headers : {"content-type" : "application/json"},
                 credentials : 'include',
                 body : JSON.stringify(addpost_obj)
-        });
-        let response =await res.json()
-        if(response.mes === 'success post'){
-            pushpostmess.innerText = "Upload Success"
-            pushpostmess.style.color = "lightgreen"
-        }else{
-            pushpostmess.innerText = "Unable to post"
-            pushpostmess.style.color = "red"
+            });
+            response =await res.json()
+        }finally{
+            loaderdiv.style.display = 'none'
+            if(response.mes === 'success post'){
+                pushpostmess.innerText = "Upload Success"
+                pushpostmess.style.color = "lightgreen"
+            }else{
+                pushpostmess.innerText = "Unable to post"
+                pushpostmess.style.color = "red"
+            }
         }
     }
 })
@@ -166,20 +176,26 @@ deletepostbut.addEventListener("click",async()=>{
         'task' : 'deletepost',
         'postid' : postidinp.value
     }
-    const res = await fetch(link,
+    loaderdiv.style.display = 'flex'
+    let response
+    try{
+        const res = await fetch(link,
         {
             method : "POST",
             headers : {"content-type" : "application/json"},
             credentials : 'include',
             body : JSON.stringify(delpost_obj)
-    });
-    let response =await res.json()
-    if(response.mes === 'success delete'){
-        deletepostmess.innerText = 'POST DELETED SUCCESSFULLY'
-        deletepostmess.style.color = "lightgreen"
-    }else{
-        deletepostmess.innerText = 'ERROR OCCURED IN DELETION'
-        deletepostmess.style.color = "red"
+        });
+        response =await res.json()
+    }finally{
+        loaderdiv.style.display = 'none'
+        if(response.mes === 'success delete'){
+            deletepostmess.innerText = 'POST DELETED SUCCESSFULLY'
+            deletepostmess.style.color = "lightgreen"
+        }else{
+            deletepostmess.innerText = 'ERROR OCCURED IN DELETION'
+            deletepostmess.style.color = "red"
+        }
     }
 })
 
@@ -190,20 +206,26 @@ updatepostbut.addEventListener('click', async()=>{
         'title' : updatetitle.value,
         'post' : updatetextarea.value
     }
-    const res = await fetch(link,
+    loaderdiv.style.display = 'flex'
+    let response
+    try{
+        const res = await fetch(link,
         {
             method : "POST",
             headers : {"content-type" : "application/json"},
             credentials : 'include',
             body : JSON.stringify(updpost_obj)
-    });
-    let response =await res.json()
-    if(response.mes === 'success update'){
-        updatepostmessege.innerText = 'POST UPDATED SUCCESSFULLY'
-        updatepostmessege.style.color = "lightgreen"
-    }else{
-        updatepostmessege.innerText = 'UPDATION COMPLETE'
-        updatepostmessege.style.color = "red"
+        });
+        response =await res.json()
+    }finally{
+        loaderdiv.style.display = 'none'
+        if(response.mes === 'success update'){
+            updatepostmessege.innerText = 'POST UPDATED SUCCESSFULLY'
+            updatepostmessege.style.color = "lightgreen"
+        }else{
+            updatepostmessege.innerText = 'UPDATION COMPLETE'
+            updatepostmessege.style.color = "red"
+        }
     }
 })
 
@@ -213,22 +235,28 @@ updatedetailbut.addEventListener('click',async()=>{
         'name' : updatename.value,
         'pass' : updatepass.value
     }
+    loaderdiv.style.display = 'flex'
+    let response
     if(updatedetailobj.name === '' || updatedetailobj.pass === ''){
         updatedetailmess.innerText = 'EMPTY FIELD'
     }else{
-        const res = await fetch(link,
+        try{
+            const res = await fetch(link,
             {
                 method : "POST",
                 headers : {"content-type" : "application/json"},
                 credentials : 'include',
                 body : JSON.stringify(updatedetailobj)
-        });
-        let response = await res.json()
-        if(response.mes === 'Updated Successfully'){
-            updatedetailmess.innerText = 'Updated Successfully'
-        }else{
-            updatedetailmess.innerText = 'Error occured'
-        }
+            });
+            response = await res.json()
+        }finally{
+            loaderdiv.style.display = 'none'
+            if(response.mes === 'Updated Successfully'){
+                updatedetailmess.innerText = 'Updated Successfully'
+            }else{
+                updatedetailmess.innerText = 'Error occured'
+            }
+        }   
     }
 })
 
@@ -236,17 +264,23 @@ confirmdelacc.addEventListener('click',async()=>{
     let accdeletionobj = {
         'task' : 'accdeletion'
     }
-    const res = await fetch(link,
+    let response
+    loaderdiv.style.display = 'flex'
+    try{
+        const res = await fetch(link,
         {
             method : "POST",
             headers : {"content-type" : "application/json"},
             credentials : 'include',
             body : JSON.stringify(accdeletionobj)
-    });
-    let response = await res.json()
-    if(response.mes === 'Request Send'){
-         delaccmess.innerText = 'Account will be shortly deleted\nby The ADMIN'
-    }else{
-         delaccmess.innerText = 'Some error Occured '
+        });
+        response = await res.json()
+    }finally{
+        loaderdiv.style.display = 'none'
+        if(response.mes === 'Request Send'){
+             delaccmess.innerText = 'Account will be shortly deleted\nby The ADMIN'
+        }else{
+             delaccmess.innerText = 'Some error Occured '
+        }
     }
 })
