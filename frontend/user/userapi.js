@@ -23,6 +23,7 @@ let updatepass = document.getElementById('updatepass')
 let updatedetailmess = document.getElementById('updatedetailmess')
 let confirmdelacc =document.getElementById('confirmdelacc')
 let delaccmess = document.getElementById('delaccmes')
+let loaderdiv = document.getElementById('loaderdiv')
 
 const backendlink ='https://codingblogsbackend.vercel.app/'
 const route = 'frontend/user/'
