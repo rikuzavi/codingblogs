@@ -86,6 +86,7 @@ submitemail.addEventListener('click', async()=>{
             add_code_div(em.email)
             maindiv.after(codediv)
             submitemail.remove()
+            emailinp.disabled = 'true'
             start('4:5')
         }
     }
