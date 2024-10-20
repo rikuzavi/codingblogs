@@ -1,0 +1,24 @@
+#d{
+    height: 30px;
+    width: 30px;
+    margin: auto;
+    margin-top: 20%;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 5px solid transparent;
+    border-top: 5px dotted violet;
+    animation: loading 1s infinite;
+}
+
+@keyframes loading {
+    0%{
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(180deg);
+        border-top: 5px dotted lightgreen;
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
