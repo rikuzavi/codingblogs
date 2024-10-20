@@ -13,7 +13,6 @@
     }
 
     #outer{
-        /* border: 2px solid white; */
         margin: auto;
         position: relative;
         top: 70px;
@@ -26,7 +25,6 @@
     #cover{
         height: 200%;
         width: 110%;
-        /* background-color: rgba(126, 255, 126, 0.6); */
         background-color: lightgreen;
         opacity: 0.6;
         position : relative;
@@ -38,24 +36,18 @@
     }
 
     #signin{
-        /* height: 300px;
-        width: 400px; */
-        /* background-color: blue; */
         backdrop-filter: blur(5px);
         padding: 30px;
         border-radius: 20px;
-        /* border: 2px solid white; */
+
     }
 
     #signup{
-        /* height: 300px;
-        width: 400px; */
-        /* background-color: blue; */
         backdrop-filter: blur(5px);
         visibility: hidden;
         padding: 30px;
         border-radius: 20px;
-        /* border: 2px solid white; */
+       
     }
 
     #form{
@@ -63,7 +55,7 @@
         top: 25%;
         display: flex;
         justify-content: space-around;
-        /* border: 2px solid; */
+        
         width: 100%;
     }
 
@@ -83,6 +75,12 @@
         border-radius: 20px;
         font-size: 1.2rem;
         padding: 5px;
+        background : linear-gradient(to right,palevioletred 20%,transparent,lightgreen);
+        background-size: 200% 100%;
+        background-position: 0 0;
+        animation: btnanim 10s infinite;
+        color: white;
+        border: 2px solid white;
     }
     h3{
         color: white;
@@ -102,6 +100,19 @@
     }
     span{
         cursor: pointer;
+        font-size: x-large;
+        color : white
+    }
+    @keyframes btnanim {
+        0%{
+            background-position: 0 0;
+        }
+        50%{
+            background-position: 100% 0;
+        }
+        100%{
+            background-position: 0 0;
+        }
     }
 }
 
@@ -116,7 +127,7 @@
     #outer{
         border: 10px solid white;
         position: relative;
-        width: 80%;
+        width: 90%;
         margin: auto;
         top: 70px;
         height: 500px;
@@ -159,15 +170,21 @@
     input{
         font-size: large;
         padding: 10px;
-        width: 60%;
+        width: 80%;
         margin-bottom: 10px;
         border-radius: 20px;
-        
     }
     button{
-        font-size: large;
+        margin: 5px;
         border-radius: 20px;
-        padding: 10px 5px 10px 5px;
+        font-size: 1.2rem;
+        padding: 5px;
+        background : linear-gradient(to right,violet 20%,transparent,lightgreen);
+        background-size: 200% 100%;
+        background-position: 0 0;
+        animation: btnanim 10s infinite;
+        color: white;
+        border: 2px solid white;
     }
     h3{
         color: white;
@@ -180,5 +197,20 @@
     }
     span{
         cursor: pointer;
+        font-size: xx-large;
+        margin-left: 5px;
+        position: relative;
+        top: 5px;
+    }
+    @keyframes btnanim {
+        0%{
+            background-position: 0 0;
+        }
+        50%{
+            background-position: 100% 0;
+        }
+        100%{
+            background-position: 0 0;
+        }
     }
 }
