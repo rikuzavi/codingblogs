@@ -82,6 +82,7 @@ submitemail.addEventListener('click', async()=>{
             displaymes.innerText = 'Email id not Registered'
             displaymes.style.color = 'red'
         }else{ 
+            displaymes.innerText = 'code send to your mail id'
             add_code_div(em.email)
             maindiv.after(codediv)
             submitemail.remove()
