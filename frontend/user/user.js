@@ -27,6 +27,8 @@ let delaccbtn = document.getElementById('delaccbtn')
 let delaccdiv = document.getElementById('delacc')
 let delaccclosebtn = document.getElementById('delclosebtn')
 
+let loaderdiv = document.getElementById('loaderdiv')
+
 add_post.addEventListener("click", ()=>{
     modal.style.visibility = "visible"
     modal.style.backdropFilter = "blur(10px)"
@@ -95,4 +97,8 @@ delaccbtn.addEventListener('click', ()=>{
 
 delaccclosebtn.addEventListener('click',()=>{
     delaccdiv.style.display = 'none'
+})
+
+window.addEventListener('load',()=>{
+    loaderdiv.style.display = 'none'
 })
