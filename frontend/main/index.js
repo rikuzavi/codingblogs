@@ -39,3 +39,8 @@ if(window.innerWidth >1099){
         
     })
 }
+
+
+window.addEventListener('load',()=>{
+    loaderdiv.style.display = 'none'
+})
