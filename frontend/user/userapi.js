@@ -27,7 +27,7 @@ let loaderdiv = document.getElementById('loaderdiv')
 let postlink =document.getElementById('link')
 let updatelink = document.getElementById('updatelink')
 
-const backendlink ='http://localhost:3000/'
+const backendlink ='https://codingblogsbackend.vercel.app/'
 const route = 'frontend/user/'
 const link = backendlink+route
 
