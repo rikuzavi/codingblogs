@@ -34,9 +34,9 @@ function datadiv(data){
         let iframe = document.createElement('iframe')
         iframe.className = 'iframe'
         if(i['link']!=''){
-            link = i['link']
-            link= link.replace('/pen/','/embed/')
-            iframe.src = link
+            let iframelink = i['link']
+            iframelink= iframelink.replace('/pen/','/embed/')
+            iframe.src = iframelink
             content.appendChild(iframe)
         }else{
             inner.style.gridColumnStart = '1'
