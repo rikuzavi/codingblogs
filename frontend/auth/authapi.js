@@ -12,7 +12,7 @@ let forget_but = document.getElementById("forgetpass")
 let loaderdiv = document.getElementById('loaderdiv')
 const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-const backendlink = 'http://localhost:3000/'
+const backendlink = 'https://codingblogsbackend.vercel.app/'
 
 const route = 'frontend/auth/'
 const link = backendlink+route
