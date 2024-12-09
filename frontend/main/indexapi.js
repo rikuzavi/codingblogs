@@ -10,7 +10,7 @@ let searchinp = document.getElementById('searchinp')
 let searchbut = document.getElementById('searchbut') 
 
 const backendlink = 'https://codingblogsbackend.vercel.app/'
-const route = 'frontend/main/'
+const route = 'frontend/main'
 const link = backendlink+route
 
 function datadiv(data){
