@@ -24,8 +24,10 @@ let updatedetailmess = document.getElementById('updatedetailmess')
 let confirmdelacc =document.getElementById('confirmdelacc')
 let delaccmess = document.getElementById('delaccmes')
 let loaderdiv = document.getElementById('loaderdiv')
+let postlink =document.getElementById('link')
+let updatelink = document.getElementById('updatelink')
 
-const backendlink ='https://codingblogsbackend.vercel.app/'
+const backendlink ='http://localhost:3000/'
 const route = 'frontend/user/'
 const link = backendlink+route
 
@@ -56,8 +58,8 @@ async function authentication(){
                 outer.innerHTML=`<h1 style="color:white;">YOU ARE NOT AUTHORISED TO POST</h1>`
             }else{
                 for(let i of response.userData){
-                    outer.appendChild(post_holder(i.title,i.post,i._id)[0])
-                    outer.appendChild(post_holder(i.title,i.post,i._id)[1])
+                    outer.appendChild(post_holder(i.title,i.post,i._id,i.link)[0])
+                    outer.appendChild(post_holder(i.title,i.post,i._id,i.link)[1])
                 }
             }
             body.before(outer)
@@ -67,17 +69,18 @@ async function authentication(){
             let update_post_but = document.getElementsByClassName('updatebut')
             for(let i of delete_post_but){
                 i.addEventListener("click", ()=>{
-                    delmodal.style.visibility = 'visible'
+                    delmodal.style.height = '100vh'
                     postidinp.value = i.nextSibling.value
                 })
             }
             for(let i of update_post_but){
                 i.addEventListener("click", ()=>{
-                    updatemodal.style.visibility = 'visible'
+                    updatemodal.style.height = '100vh'
                     updateidinp.value = i.previousSibling.value
                     let data = i.parentElement.previousSibling.childNodes
                     updatetextarea.value = data[1].innerText
                     updatetitle.value = data[0].innerText
+                    updatelink.value=data[2].value
                 })
             }
         })
@@ -111,7 +114,8 @@ addpost_but.addEventListener("click", async()=>{
     let addpost_obj ={
         'task' : 'addpost',
         'title' : title.value,
-        'post' : post.value
+        'post' : post.value,
+        'link' : postlink.value
     }
     loaderdiv.style.display = 'flex'
     if(addpost_obj.title === '' || addpost_obj.post === ''){
@@ -141,17 +145,38 @@ addpost_but.addEventListener("click", async()=>{
     }
 })
 
-function post_holder(title,desc,id,like){
+function post_holder(title,desc,id,link){
+    if(link==''){
+        link=''
+    }else{
+        link= link.replace('/pen/','/embed/')
+    }
     let inner1 = document.createElement('div')
     let inner2 = document.createElement('div')
-    let h1 = document.createElement("h1")
-    let p_desc = document.createElement("h3")
+    let h1 = document.createElement("h2")
+    let p_desc = document.createElement("p")
+    let p_link = document.createElement("input")
     let post_key = document.createElement("input")
     post_key.type = 'text'
     post_key.value = `${id}`
     post_key.hidden = true
+    p_link.value = `${link}`
+    p_link.hidden = true
     let del_but = document.createElement('button')
     let upd_but = document.createElement('button')
+    let liveframe= document.createElement('div')
+    liveframe.className='liveframe'
+    let iframe = document.createElement('iframe')
+    iframe.className='iframe'
+    if(link==''){
+        iframe.style.display = 'none'
+        liveframe.innerHTML = '<h2>THERE IS NO LIVE PREVIEW :-)</h2>'
+        liveframe.style.backgroundColor = 'black'
+        liveframe.style.color = 'white'
+    }else{
+        iframe.src = `${link}?default-tab=result&theme-id=dark&editable=true`
+        liveframe.appendChild(iframe)
+    }
     del_but.className = "delbut"
     del_but.innerText = "DELETE POST"
     upd_but.className = "updatebut"
@@ -162,8 +187,10 @@ function post_holder(title,desc,id,like){
     inner2.id = "in2"
     inner1.appendChild(h1)
     inner1.appendChild(p_desc)
+    inner1.appendChild(p_link)
     h1.innerText = `${title}`
     p_desc.innerText = `${desc}`
+    inner2.appendChild(liveframe)
     inner2.appendChild(del_but)
     inner2.appendChild(post_key)
     inner2.appendChild(upd_but)
@@ -205,7 +232,8 @@ updatepostbut.addEventListener('click', async()=>{
         'task' : 'updatepost',
         'postid' : updateidinp.value,
         'title' : updatetitle.value,
-        'post' : updatetextarea.value
+        'post' : updatetextarea.value,
+        'link' : updatelink.value
     }
     loaderdiv.style.display = 'flex'
     let response
@@ -240,6 +268,7 @@ updatedetailbut.addEventListener('click',async()=>{
     let response
     if(updatedetailobj.name === '' || updatedetailobj.pass === ''){
         updatedetailmess.innerText = 'EMPTY FIELD'
+        loaderdiv.style.display = 'none'
     }else{
         try{
             const res = await fetch(link,

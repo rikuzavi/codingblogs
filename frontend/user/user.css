@@ -16,6 +16,16 @@
     background-color: lightgreen;
 }
 
+#footer{
+    position: fixed;
+    bottom: 0;
+    backdrop-filter: blur(10px) brightness(10%);
+    color: violet;
+    width: 100%;
+    padding: 2px 0px 2px 10px;
+    z-index: 3;
+}
+
 @media(min-width : 1100px){
     #navclick{
         display: none;
@@ -38,19 +48,34 @@
     }
 
     #userimg{
-        height: 200px;
-        width: 200px;
-        border-radius: 50%;
+        height: 80px;
+        width: 80px;
+        border-radius: 50px;
         z-index: 5;
+        transition: all 0.3s;
+        background: linear-gradient(to top right,lightgreen,red,blue);
+    }
+    #userimg:hover{
+        filter: drop-shadow(0px 0px 10px lightgreen);
+        
     }
 
     #userdetail{
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 20px;
-        width: 80%;
+        padding: 10px 0px 5px 0px;
+        width: 100%;
         margin: auto;
+        position: sticky;
+        top: 0px;
+        z-index: 2;
+        background-color: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+    }
+    #userdetail > div{
+        margin-left: 10%;
+        align-items: center;
     }
     #details{
         color: white;
@@ -58,14 +83,14 @@
     #username{
         color: white;
         text-align: center;
-        animation: username 5s infinite;
+        animation: username 10s infinite;
         text-transform: uppercase;
         letter-spacing: 5px;
     }
 
     @keyframes username{
         0%{
-            color: white;
+            color: blue;
         }
         35%{
             color: violet;
@@ -74,273 +99,29 @@
             color: lightgreen;
         }
         100%{
-            color: white;
+            color: blue;
         }
 
     }
-
-    #ruler{
-        border-top: 10px dotted white;
-        width: 80%;
-        margin: auto;
-    }
-    #modal{
-        visibility: hidden;
-        color : white;
-        width: 99%;
-        padding : 8px;
-        height : 100vh;
-        overflow: hidden;
-        position: fixed;
-        top: 0px;
-        display: flex;
-        flex-direction: column;
-    }
-    #textarea{
-        font-size: large;
-        width: 50%;
-        height: 400px;
-        resize: none;
-        margin: auto;
-        padding: 10px;
-    }
-    #title{
-        font-size: x-large;
-        height: 30px;
-        width: 50%;
-        resize: none;
-        margin: auto;
-        padding: 10px;
-    }
-    #closemodal{
-        cursor: pointer;
-        align-self: flex-end;
-        font-size: xx-large;
-    }
-    #closemodal:hover{
-        color: red;
-    }
-    #pushpost{
-        width: 100px;
-        height: 50px;
-        margin: auto;
-        font-size: large;
-        border-radius: 20px;
-        
-    }
-    #pushpostmess{
-        display: inline-block;
-        margin: auto;
-        padding: auto;
-        position: relative;
-        top: 40px;
-    }
-    #outer{
-        display: grid;
-        grid-template-columns: 80% auto;
-        width: 80%;
-        margin: auto;
-    }
-    .inner{
-        border-left: 10px solid darkolivegreen;
-        border-radius: 10px;
-        height: 400px;
-        backdrop-filter: hue-rotate(0deg);
-        overflow: auto;
-        word-wrap: break-word;
-        margin-bottom: 40px;
-        backdrop-filter: blur(5px);
-        
-    }
-
-    .inner > h3{
-        
-        margin-top: 10px;
-        color: violet;
-        margin-left: 10px;
-        font-family: consolas;
-    }
-
-    .inner > h1{
-        opacity: 0.7;
-        color: white;
-        background-color: darkolivegreen;
-        z-index: 1;
-        letter-spacing: 5px;
-        height: 15%;
-        position: sticky;
-        top: 0px;
-        text-align: center;
-        
-    }
-
-    .delbut{
-        height: 80px;
-        padding: 20px; 
-        margin-bottom: 10px;
-        border-radius: 50px 0px 0px 50px;
-        position: relative;
-        left: 130px;
-        transition: all 0.5s;
-        font-size: large;
-        font-weight: bold;
-        text-align: right;
-        background-color: transparent;
-        border: 5px solid palevioletred;
-        color: transparent;
-    }
-    .updatebut{
-        height: 80px;
-        padding: 20px;
-        border-radius: 50px 0px 0px 50px;
-        position: relative;
-        left: 130px;
-        transition: all 0.5s;
-        font-size: large;
-        font-weight: bold;
-        text-align: right;
-        background-color: transparent;
-        border: 5px solid lightgreen;
-        color: transparent;  
-    }
-    .delbut:hover{
-        left: 20px;
-        backdrop-filter: hue-rotate(180deg);
-        letter-spacing: 5px;
-        color: white;
-    }
-    .updatebut:hover{
-        left: 20px;
-        letter-spacing: 5px;
-        color: white;
-    }
-
-    #in2{
-       border: none;    
-        backdrop-filter: none;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
     
-    #delmodal{
-        visibility: hidden;
-        color : white;
-        width: 100%;
-        height : 100vh;
-        overflow: hidden;
-        position: fixed;
-        top: 0px;
-        display: flex;
-        flex-direction: column;
-        backdrop-filter: blur(10px);
-        z-index: 2;
-        
-    }
-    #deletepostbut{
-        height: 50px;
-        width: 100px;
-        border-radius: 10px;
-    }
-    #deletepostmess{
-        margin-top: 5%;
-    }
-
-    #closedelmodal{
-        font-size: xx-large;
-        float: right;
-    }
-    #closedelmodal:hover{
-        color: red;
-        cursor: pointer;
-    }
-    #delmodal > div{
-        height: 300px;
-        width: 50%;
-        color: orange;
-        margin: auto;
-
-    }
-
-    #updatemodal{
-        visibility: hidden;
-        color : white;
-        width: 100%;
-        height : 100vh;
-        overflow: hidden;
-        position: fixed;
-        top: 0px;
-        display: flex;
-        flex-direction: column;
-        backdrop-filter: blur(10px);
-        z-index: 2;
-        
-    }
-    #updatepostmess{
-        display: inline-block;
-        margin: auto;
-        padding: auto;
-        position: relative;
-        top: 40px;
-    }
-    #closeupdatemodal{
-        cursor: pointer;
-        align-self: flex-end;
-        font-size: xx-large;
-    }
-    #closeupdatemodal:hover{
-        color: red;
-    }
-    #updatepost{
-        width: 100px;
-        height: 50px;
-        margin: auto;
-        font-size: large;
-        border-radius: 20px;
-    }
-    #updatetitle{
-        font-size: x-large;
-        height: 30px;
-        width: 50%;
-        resize: none;
-        margin: auto;
-        padding: 10px;
-    }
-    #updatetextarea{
-        font-size: large;
-        width: 50%;
-        height: 500px;
-        resize: none;
-        margin: auto;
-        padding: 10px;
-    }
     .mainbut{
         padding: 20px;
-        margin-left: 15px;
+        margin-right: 15px;
         border-radius: 30px;
         background: transparent;
-        border: 1px solid violet;
+        border: 2px solid palevioletred;
         font-weight: bold;
         font-size: large;
-        color: white;
+        color: aquamarine;
         backdrop-filter: hue-rotate(0deg);
-        animation: bg-mainbut 10s infinite;
         transition: all 0.3s;
         text-decoration: none;
     }
     .mainbut:hover{
         background-color: violet;
+        border: 2px solid violet;
+        color: white;
         transform: scale(1.2);
-    }
-
-    @keyframes bg-mainbut{
-        0%{
-            backdrop-filter: hue-rotate(0deg);
-        }
-        100%{
-            backdrop-filter: hue-rotate(360deg);
-        }
     }
 
     #updateaccdiv{
@@ -357,6 +138,7 @@
         justify-content: center;
         overflow: hidden;
         transition: all 0.5s;
+        z-index: 3;
     }
 
     #updatename{
@@ -408,6 +190,171 @@
         background-color: transparent;
         backdrop-filter: blur(10px);
         z-index: 5;
+    }
+
+    #modal{
+        color: white;
+        display: flex;
+        overflow: hidden;
+        flex-direction: column;
+        position: fixed;
+        width: 100%;
+        height: 0px;
+        top: 0;
+        transition: all 0.3s;
+        backdrop-filter: brightness(30%) blur(10px);
+    }
+
+    #title,#textarea,#link,#pushpost,#pushpostmes{
+        width: 50%;
+        padding: 10px;
+        border-radius: 20px;
+        margin-bottom: 10px;
+        align-self: center;
+        font-size: large;
+        resize: none;
+    }
+    #textarea{
+        height: 100px;
+    }
+    #closemodal{
+        position: absolute;
+        right: 20px;
+        font-size: x-large;
+        cursor: pointer;
+    }
+    #closemodal:hover{
+        color:red
+    }
+    #pushpostmess{
+        align-self: center;
+        width: fit-content;
+    }
+    #delmodal{
+        color: orange;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 0vh;
+        display: flex;
+        backdrop-filter: brightness(30%) blur(10px);
+        transition: all 0.3s;
+        overflow: hidden;
+        z-index: 3;
+    }
+    #delmodal > div{
+        width: 50%;
+        margin: auto;
+    }
+    #closedelmodal:hover{
+        cursor: pointer;
+        color: red;
+    }
+
+    #updatemodal{
+        position: fixed;
+        top: 0px;
+        width: 100%;
+        height: 0vh;
+        overflow: hidden;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        backdrop-filter: brightness(30%) blur(10px);
+        transition: all 0.3s;
+        z-index: 3;
+    }
+    #updatetextarea,#updatetitle,#updatepost,#updatelink{
+        width: 50%;
+        padding: 10px;
+        border-radius: 20px;
+        margin-bottom: 10px;
+        align-self: center;
+        font-size: large;
+        resize: none;
+    }
+    #updatepostmess{
+        align-self: center;
+        margin-top: 100px;
+        width: fit-content;
+    }
+    #updatetextarea{
+        height: 200px;
+    }
+    #closeupdatemodal{
+        font-size: x-large;
+        cursor: pointer;
+        position: absolute;
+        right: 20px;
+    }
+    #closeupdatemodal:hover{
+        color: red;
+    }
+
+    #outer{
+        /* border: 2px solid red; */
+        width: 80%;
+        margin: auto;
+        color: white;
+        display: grid;
+        grid-template-columns: 40% auto;
+    }
+    .inner{
+        border-radius: 20px 0px 0px 20px;
+        border: 5px solid lightgreen;
+        border-right: 2px solid transparent;
+        height: 500px;
+        overflow: auto;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 50px;
+        backdrop-filter: blur(10px);
+    }
+    .liveframe{
+        /* backdrop-filter: blur(10px); */
+        height: 100%;
+        width: 100%;
+    }
+    .iframe{
+        width: 100%;
+       height: 100%;
+    }
+    .delbut,.updatebut{
+        padding: 8px 10px 8px 10px;
+        background-color: lightgreen;
+        transition: all 0.5s;
+        font-weight: bold;
+    }
+    .delbut:hover{
+        letter-spacing: 6px;
+        background-color: crimson;
+    }
+    .updatebut:hover{
+        letter-spacing: 6px;
+        background-color: orange;
+    }
+
+    #in1 > h2{
+        font-family: 'calibri';
+        text-align: center;
+        color: palevioletred;
+        padding: 5px;
+        position: sticky;
+        top: 0px;
+        z-index: 1;
+        border-bottom: 1px solid white;
+    }
+    #in1 > p{
+        font-family: 'calibri light';
+        font-size: large;
+        padding: 10px;
+        color: aquamarine;
+    }
+    #in2{
+        border-radius: 0px 20px 20px 0px;
+        border: 5px solid lightgreen;
+        border-left: 2px solid transparent;
+        background : rgba(255, 255, 255, 0.2);
     }
 }
 
@@ -468,7 +415,10 @@
         font-size: xx-large;
     }
     body{
-        background-color: black;
+        background : linear-gradient(to top right, blue,crimson);
+        background-size: 100% 100vh;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
     }
     #delacc{
         background-color: white;
@@ -480,21 +430,25 @@
         width: 50px;
     }
     #userimg{
-        height: 100px;
-        width: 100px;
+        height: 50px;
+        width: 50px;
         border-radius: 50%;
+        background: linear-gradient(to top right,lightgreen,red,blue);
     }
 
     #userdetail{
         display: flex;
         justify-content: space-between;
-        padding: 20px;
-        width: 90%;
+        padding: 0px;
+        width: 100%;
         margin: auto;
         position: sticky;
         top: 0px;
         z-index: 1;
         background-color: black;
+    }
+    #userdetail > div{
+        margin: 20px 0px 20px 20px;
     }
     #details{
         color: white;
@@ -533,46 +487,50 @@
     #ruler{
         display: none;
     }
-
+    #delacc{
+        display: none;
+    }
     .delbut{
         height: 50px;
-        width: 100px;
-        border-radius: 20px;
-        background-color: palevioletred;
+        width: 50%;
+        border-radius: 0px 50px 50px 0px;
+        background-color: crimson;
     }
     .updatebut{
         height: 50px;
-        width: 100px;
-        border-radius: 20px;
-        background-color: lightgreen;
+        width: 50%;
+        border-radius: 50px 00px 0px 50px;
+        background-color: orange;
     }
 
     #modal{
-        visibility: hidden;
         color : white;
         width: 99%;
-        height : 100vh;
+        height : 0vh;
         overflow: hidden;
         position: fixed;
         top: 0px;
         display: flex;
         flex-direction: column;
+        transition: all 0.3s;
+        backdrop-filter : brightness(30%) blur(10px);
+        align-items: center;
     }
     #textarea{
         font-size: large;
         width: 90%;
-        height: 500px;
+        height: 300px;
         resize: none;
-        margin: auto;
         padding: 10px;
+        border-radius: 20px;
     }
     #title{
         font-size: large;
         height: 25px;
         width: 90%;
         resize: none;
-        margin: auto;
         padding: 10px;
+        border-radius: 20px;
     }
     #closemodal{
         cursor: pointer;
@@ -585,68 +543,71 @@
     #pushpost{
         width: 100px;
         height: 50px;
-        margin: auto;
         font-size: large;
         border-radius: 20px;
     }
     #pushpostmess{
         display: inline-block;
-        margin: auto;
-        padding: auto;
         position: relative;
-        top: 20px;
+        top: 10px;
+    }
+    #link{
+        width: 90%;
+        border-radius: 20px;
+        padding: 10px;
     }
     #outer{
         display: grid;
         grid-template-columns: auto;
-        width: 90%;
+        width: 95%;
         margin: auto;
     }
     .inner{
-        border: 2px solid darkolivegreen;
-        border-radius: 10px;
         height: 500px;
         overflow: auto;
         word-wrap: break-word;
-        margin-bottom: 20px;
     }
-
-    .inner > h3{
-        font-size: 15px;
-        margin-top: 10px;
-        color: violet;
-        margin-left: 10px;
-        font-family: consolas;
-    }
-
-    .inner > h1{
+    #in1{
+        position: relative;
         color: white;
-        background-color: darkolivegreen;
-        letter-spacing: 5px;
-        padding-bottom: 10px;
+        height: fit-content;
+        border: 5px solid crimson;
+        border-bottom: none;
+        border-radius: 10px 10px 0px 0px;
+        font-family: 'calibri';
         text-align: center;
-        font-size: 20px;
     }
-
+    #in1 > h2{
+        border-bottom: 2px solid white;
+    }
+    #in1 > p{
+        color: aquamarine;
+    }
     #in2{
-        height: auto;
-        display: flex;
-        justify-content: space-around;
+        height : fit-content;
+        margin-bottom: 40px;
+        /* border: 5px solid lightgreen; */
+        border-top: none;
+        border-radius: 0px 0px 10px 10px;
+    }
+    .iframe{
+        width: 99%;
+        height: 400px;
+        color: white;
     }
     
     #delmodal{
-        visibility: hidden;
-        color : white;
         width: 100%;
-        height : 120vh;
+        height : 0vh;
         overflow: hidden;
         position: fixed;
         top: 0px;
         display: flex;
         flex-direction: column;
-        backdrop-filter: blur(10px);
+        backdrop-filter: brightness(30%) blur(10px);
         z-index: 2;
-        padding: 10px;
+        padding: 0px 0px 0px 20px;
+        transition: all 0.3s;
     }
     #deletepostbut{
         height: 50px;
@@ -664,15 +625,14 @@
     #delmodal > div{
         height: 300px;
         width: 90%;
-        border: 5px solid lightgreen;
+        color: orange;
         margin-top: 200px;
     }
 
     #updatemodal{
-        visibility: hidden;
         color : white;
         width: 100%;
-        height : 100vh;
+        height : 0vh;
         overflow: hidden;
         position: fixed;
         top: 0px;
@@ -680,7 +640,8 @@
         flex-direction: column;
         backdrop-filter: blur(10px);
         z-index: 2;
-        
+        align-items: center;
+        transition: all 0.3s;
     }
     #updatepostmess{
         display: inline-block;
@@ -704,16 +665,22 @@
     #updatetitle{
         font-size: large;
         height: 30px;
-        width: 100%;
+        width: 90%;
         padding: 10px;
     }
     #updatetextarea{
         font-size: 15px;
-        width: 100%;
-        height: 600px;
-        margin-top: 20px;
+        width: 90%;
+        height: 300px;
         resize: none;
         padding: 10px;
+        border-radius: 10px;
+    }
+    #updatelink{
+        font-size: 15px;
+        border-radius: 20px;
+        padding: 5px;
+        width: 90%;
     }
     .mainbut{
         padding: 20px;
@@ -729,12 +696,10 @@
         width: 200px;
     }
     #updateaccdiv{
-        position: absolute;
+        position: fixed;
         top: 10px;
         height: 0px;
-        width: 93%;
-        padding: 0px 0px 0px 20px;
-        border-radius: 20px;
+        width: 100%;
         background-color: white;
         z-index: 2;
         display: flex;
@@ -747,10 +712,12 @@
     #updatename{
         width: 95%;
         height: 30px;
+        margin: 10px auto 0 auto;
     }
     #updatepass{
         width: 95%;
         height: 30px;
+        margin: 10px auto 0 auto;
     }
     #updateaccdiv > button{
         width: 95%;
@@ -758,6 +725,7 @@
         background-color: lightgreen;
         color: red;
         font-weight: bold;
+        margin: 10px auto 0 auto;
     } 
     #updateaccdiv > span{
         position: absolute;

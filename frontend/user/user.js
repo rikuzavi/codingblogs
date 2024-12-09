@@ -29,14 +29,17 @@ let delaccclosebtn = document.getElementById('delclosebtn')
 
 let loader = document.getElementById('loaderdiv')
 
+let footer = document.getElementById('footer')
+
 add_post.addEventListener("click", ()=>{
-    modal.style.visibility = "visible"
-    modal.style.backdropFilter = "blur(10px)"
+    modal.style.height = '100vh'
+    modal.style.paddingTop = '100px'
     modal.style.zIndex = "2"
 })
 
 close_modal.addEventListener("click", ()=>{
-    modal.style.visibility = "hidden"
+    modal.style.height = "0px"
+    modal.style.paddingTop ="0px"
     modal.style.zIndex = "2"
     postmes.innerText =""
     textarea.value = ""
@@ -44,11 +47,11 @@ close_modal.addEventListener("click", ()=>{
 })
 
 closedelmodal.addEventListener("click", ()=>{
-    delmodaldiv.style.visibility = "hidden"
+    delmodaldiv.style.height ='0vh'
 })
 
 closeupdatemodal.addEventListener("click", ()=>{
-    updatemodaldiv.style.visibility = "hidden"
+    updatemodaldiv.style.height = '0vh'
     updatepostmess.innerText = ""
 })
 
@@ -102,3 +105,10 @@ delaccclosebtn.addEventListener('click',()=>{
 window.addEventListener('load',()=>{
     loader.style.display = 'none'
 })
+
+
+let d = new Date()
+let year = d.getFullYear()
+
+footer.children[0].style.color = 'lightgreen'
+footer.children[0].innerText = year

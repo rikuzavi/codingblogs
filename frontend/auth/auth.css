@@ -2,7 +2,19 @@
     margin : 0px;
     font-family: Arial;
 }
-
+#footer{
+    position: fixed;
+    bottom: 0;
+    backdrop-filter: blur(10px) brightness(10%);
+    color: violet;
+    width: 100%;
+    padding: 2px 0px 2px 10px;
+    z-index: 3;
+}
+#footer > span{
+    font-size: 16px;
+    position: static;
+}
 
 @media(min-width : 1100px){
     body{
@@ -52,7 +64,7 @@
 
     #form{
         position: absolute;
-        top: 25%;
+        top: 18%;
         display: flex;
         justify-content: space-around;
         
@@ -69,6 +81,7 @@
         padding: 2px;
         color: white;
         border: 2px solid palevioletred;
+        text-align: center;
     }
     button{
         margin: 5px;
@@ -95,13 +108,15 @@
         z-index: 1;
         
     }
-    input[type="password"]{
+    /* input[type="password"]{
         width: 85%;
-    }
+    } */
     span{
         cursor: pointer;
-        font-size: x-large;
-        color : white
+        font-size: xx-large;
+        color : white;
+        position: relative;
+        left: 50%;
     }
     @keyframes btnanim {
         0%{
@@ -136,20 +151,23 @@
 
 @media(max-width : 1099px){
     body{
-        background:linear-gradient(to top right,palevioletred,violet);
+        background:linear-gradient(to top right,blue,crimson);
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-size: 100% 100vh;
     }
 
     #outer{
-        border: 10px solid white;
+        border-top: 5px solid blue;
+        border-right : 5px solid blue;
+        border-bottom: 5px solid crimson;
+        border-left: 5px solid crimson;
         position: relative;
         width: 90%;
         margin: auto;
         top: 70px;
         height: 500px;
-        border-radius: 40px;
+        border-radius: 0px 40px 0px 40px;
         overflow: hidden;
         background-clip: border-box;
     }
@@ -177,41 +195,48 @@
     }
 
     #form{
-        width: 90%;
-        height: 85%;
+        width: 100%;
+        height: 100%;
         border-radius: 20px;
-        
         margin: auto;
+        padding-left: 10px;
         backdrop-filter: blur(5px);
     }
 
     input{
         font-size: large;
-        padding: 10px;
+        padding: 5px;
         width: 80%;
         margin-bottom: 10px;
         border-radius: 20px;
+        background-color: transparent;
+        border: 2px solid lightgreen;
+        text-align: center;
+        color: violet;
     }
     button{
         margin: 5px;
         border-radius: 20px;
         font-size: 1.2rem;
-        padding: 5px;
+        padding: 5px 10px 5px 10px;
         background : linear-gradient(to right,violet 20%,transparent,lightgreen);
         background-size: 200% 100%;
         background-position: 0 0;
         animation: btnanim 10s infinite;
         color: white;
-        border: 2px solid white;
+        border: 3px solid black;
     }
     h3{
         color: white;
+        margin-left: 5px;
     }
 
     h1{
         width: fit-content;
         margin: auto;
         z-index: 2;
+        color: lightseagreen;
+        margin-bottom: 20px;
     }
     span{
         cursor: pointer;
@@ -219,6 +244,7 @@
         margin-left: 5px;
         position: relative;
         top: 5px;
+        color: white;
     }
     @keyframes btnanim {
         0%{

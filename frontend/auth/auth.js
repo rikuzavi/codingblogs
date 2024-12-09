@@ -43,10 +43,11 @@ if(window.innerWidth > 1099){
         if(span1.innerText=='⚇'){
             span1.innerText="⚉"
             pass1.type = "text"
-            pass1.style.width = "85%"
+            pass1.style.backgroundColor ='rgba(255,255,255,0.5)'
         }else{
             span1.innerText="⚇"
             pass1.type = "password"
+            pass1.style.backgroundColor ='transparent'
         }
         
     })
@@ -55,10 +56,11 @@ if(window.innerWidth > 1099){
         if(span2.innerText=='⚇'){
             span2.innerText="⚉"
             pass2.type = "text"
-            pass2.style.width = "85%"
+            pass2.style.backgroundColor ='rgba(255,255,255,0.5)'
         }else{
             span2.innerText="⚇"
             pass2.type = "password"
+            pass2.style.backgroundColor ='transparent'
         }
     })
 }else{
@@ -99,3 +101,9 @@ if(window.innerWidth > 1099){
         }
     })
 }
+
+let d = new Date()
+let year = d.getFullYear()
+
+footer.children[0].style.color = 'lightgreen'
+footer.children[0].innerText = year

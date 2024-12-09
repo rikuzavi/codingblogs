@@ -137,3 +137,9 @@ adminbtn.addEventListener('click', async(e)=>{
         userdata(response.data)
     }
 })
+
+let d = new Date()
+let year = d.getFullYear()
+
+footer.children[0].style.color = 'lightgreen'
+footer.children[0].innerText = year

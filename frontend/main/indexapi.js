@@ -9,7 +9,7 @@ let content = document.getElementById('content')
 let searchinp = document.getElementById('searchinp')
 let searchbut = document.getElementById('searchbut') 
 
-const backendlink = 'https://codingblogsbackend.vercel.app/'
+const backendlink = 'http://localhost:3000/'
 const route = 'frontend/main/'
 const link = backendlink+route
 
@@ -31,6 +31,20 @@ function datadiv(data){
         inner.append(p)
         inner.append(ack)
         content.appendChild(inner)
+        let iframe = document.createElement('iframe')
+        iframe.className = 'iframe'
+        if(i['link']!=''){
+            iframe.src = i['link']
+            content.appendChild(iframe)
+        }else{
+            inner.style.gridColumnStart = '1'
+            inner.style.gridColumnEnd = '3'
+            inner.style.borderRadius = '30px'
+            inner.style.border = '5px solid lightgreen'
+            if(window.innerWidth <1100){
+                inner.style.marginBottom = '50px'
+            }
+        }
     }
     setupPagination()
 }

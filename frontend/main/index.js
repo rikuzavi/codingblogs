@@ -6,6 +6,10 @@ let nav = document.getElementById('nav')
 let navbar = document.getElementById('navbar')
 let loaderdiv = document.getElementById('loaderdiv')
 
+let paralaxleaf = document.getElementById('paralaxleaf')
+let paralaxhill = document.getElementById('paralaxhill')
+let paralaxplant = document.getElementById('paralaxplant')
+
 navbut.addEventListener('click',()=>{
     for(let i of nvbut){
         if(i.style.marginLeft !='10%'){
@@ -41,7 +45,27 @@ if(window.innerWidth >1099){
     })
 }
 
+let scrolltracker = window.scrollY
+window.addEventListener('scroll', ()=>{
+    if(scrolltracker < window.scrollY){
+        if(scrolltracker>0 && scrolltracker<300){
+            paralaxleaf.style.transform = `translateX(${window.scrollY}px)`
+            paralaxhill.style.transform = `translateX(-${window.scrollY}px)`
+        }
+    }else{
+        paralaxleaf.style.transform = `translateX(${window.scrollY}px)` 
+        paralaxhill.style.transform = `translateX(-${window.scrollY}px)`
+    }
+    scrolltracker = window.scrollY
+})
+
 
 window.addEventListener('load',()=>{
     loaderdiv.style.display = 'none'
 })
+
+let d = new Date()
+let year = d.getFullYear()
+
+footer.children[0].style.color = 'lightgreen'
+footer.children[0].innerText = year

@@ -31,21 +31,20 @@
 
     <div id="userdetail">
         <div>
-            <img src="../images/user.png" alt="" id="userimg">
+            <div id="userimg"></div>
             <h1 id="username">USERNAME</h1>
         </div>
         <div id="navclick">=</div>
         <div id="details">
             <button id="updateaccbtn" class="mainbut">Update account</button>
             <button id="delaccbtn" class="mainbut">Delete account</button><br><br>
-            <button id="logoutbut" class="mainbut">LOGOUT</button>
-            <button id="addpost" class="mainbut">ADD POST</button>
-            <a href="https://rikuzavi.github.io/codingblogs/frontend/main/index.html" class="mainbut"> HOME</a>
+            <button id="logoutbut" class="mainbut">Logout</button>
+            <button id="addpost" class="mainbut">Add Post</button>
+            <a href="https://rikuzavi.github.io/codingblogs/frontend/main/index.html" class="mainbut"> Home</a>
         </div>
         
     </div>
     <br>
-    <div id="ruler"></div>
     <br>
     <pre>
 
@@ -60,7 +59,8 @@
         <h3 id="pushpostmess"></h3>
         <span id="closemodal">X</span>
         <textarea id="title" placeholder="S U B J E C T"></textarea>
-        <textarea id="textarea" placeholder="P O S T"></textarea>
+        <textarea id="textarea" placeholder="D E S C R I P T I O N"></textarea>
+        <textarea id="link" placeholder="L I N K ( codepen )"></textarea>
         <button id="pushpost">POST</button>
     </div>
 
@@ -78,7 +78,8 @@
         <h3 id="updatepostmess"></h3>
         <span id="closeupdatemodal">X</span><br>
         <textarea id="updatetitle" placeholder="S U B J E C T"></textarea>
-        <textarea id="updatetextarea" placeholder="P O S T"></textarea><br>
+        <textarea id="updatetextarea" placeholder="D E S C R I P T I O N"></textarea><br>
+        <textarea id="updatelink" placeholder="L I N K"></textarea><br>
         <input type="text" id="updateidinp" hidden>
         <button id="updatepost">UPDATE</button>
     </div>
@@ -87,7 +88,9 @@
         <object id="loader" data="../preloader/loader.html"></object>
     </div>
 
+    <div id="footer">© Riku Zavi ~ <span></span></div>
     <script src="userapi.js"></script>
     <script src="user.js"></script>
+    <!-- <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script> -->
 </body>
 </html>
