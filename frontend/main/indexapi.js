@@ -15,7 +15,10 @@ const link = backendlink+route
 
 function datadiv(data){
     content.innerHTML=''
-    for(let i of data){
+    for(let i=data.length-1;i>=0;i--){
+        let outdiv = document.createElement('div')
+        outdiv.className = 'outdiv'
+        
         let inner = document.createElement('div')
         let heading = document.createElement('h1')
         let p = document.createElement('p')
@@ -24,20 +27,20 @@ function datadiv(data){
         heading.className = 'contentheading'
         p.className = 'contentpost'
         ack.className = 'contentack'
-        heading.innerText = i['title']
-        p.innerText = i['post']
-        ack.innerText = `~ ${i['name']}`
+        heading.innerText = data[i]['title']
+        p.innerText = data[i]['post']
+        ack.innerText = `~ ${data[i]['name']}`
         inner.append(heading)
         inner.append(p)
         inner.append(ack)
-        content.appendChild(inner)
+        outdiv.appendChild(inner)
         let iframe = document.createElement('iframe')
         iframe.className = 'iframe'
         if(i['link']!=''){
-            let iframelink = i['link']
+            let iframelink = data[i]['link']
             iframelink= iframelink.replace('/pen/','/embed/')
             iframe.src = iframelink
-            content.appendChild(iframe)
+            outdiv.appendChild(iframe)
         }else{
             inner.style.gridColumnStart = '1'
             inner.style.gridColumnEnd = '3'
@@ -47,6 +50,7 @@ function datadiv(data){
                 inner.style.marginBottom = '50px'
             }
         }
+        content.appendChild(outdiv)
     }
     setupPagination()
 }
@@ -82,19 +86,19 @@ async function main(){
     
 }
 function setupPagination() {
-    let innerdiv = document.getElementsByClassName('inner');
+    let outdiv = document.getElementsByClassName('outdiv');
     let nextbtn = document.getElementById('next');
     let count = 3;
 
-    for (let i = 3; i < innerdiv.length; i++) {
-        innerdiv[i].style.display = "none";
+    for (let i = 3; i < outdiv.length; i++) {
+        outdiv[i].style.display = "none";
     }
     if (!nextbtn.hasAttribute('data-listener')) {
         nextbtn.setAttribute('data-listener', 'true');
         nextbtn.addEventListener('click', () => {
             for (let j = 0; j < 3; j++) {
                 if (count < innerdiv.length) {
-                    innerdiv[count].style.display = "block";
+                    outdiv[count].style.display = "block";
                     count++;
                 } else {
                     break;
