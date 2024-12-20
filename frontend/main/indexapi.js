@@ -97,7 +97,7 @@ function setupPagination() {
         nextbtn.setAttribute('data-listener', 'true');
         nextbtn.addEventListener('click', () => {
             for (let j = 0; j < 3; j++) {
-                if (count < innerdiv.length) {
+                if (count < outdiv.length) {
                     outdiv[count].style.display = "grid";
                     count++;
                 } else {
