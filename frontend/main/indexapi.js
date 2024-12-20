@@ -98,7 +98,7 @@ function setupPagination() {
         nextbtn.addEventListener('click', () => {
             for (let j = 0; j < 3; j++) {
                 if (count < innerdiv.length) {
-                    outdiv[count].style.display = "block";
+                    outdiv[count].style.display = "grid";
                     count++;
                 } else {
                     break;
